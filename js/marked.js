@@ -880,8 +880,9 @@ Renderer.prototype.tablecell = function(content, flags) {
 };
 
 Renderer.prototype.math = function(content, language, display) {
-  mode = display ? '; mode=display' : '';
-  return '<script type="' + language + mode + '">' + content + '<' + '/script>';
+  var mode = display ? '; mode=display' : '';
+  var s = 'script';  
+  return '<' + s + ' type="' + language + mode + '">' + content + '</' + s + '>';
 }
 
 // span level renderer
